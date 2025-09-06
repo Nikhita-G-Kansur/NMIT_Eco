@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Eco Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Eco Marketplace</div>
+    <div id="ecoPoints">Eco Points: 0</div>
+    <div class="cart-icon" onclick="toggleCart()">🛒</div>
+  </header>
+
+  <div class="dashboard-container">
+    <button onclick="goToBuy()">Buy Products</button>
+    <button onclick="goToSell()">Sell Products</button>
+  </div>
+
+  <div id="cart" class="cart-grid">
+    <h3>Your Cart</h3>
+    <div id="cartItems"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const userId = localStorage.getItem("userId");
+    if (!userId) window.location.href = "login.html";
+
+    fetch(`${API}/eco-points/${userId}`)
+      .then(res => res.json())
+      .then(data => updateEcoPoints(data.ecoPoints));
+
+    function goToBuy() { window.location.href = "buy.html"; }
+    function goToSell() { window.location.href = "sell.html"; }
+  </script>
+</body>
+</html>

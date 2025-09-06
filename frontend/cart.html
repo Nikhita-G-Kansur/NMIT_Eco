@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart - Eco Marketplace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Eco Marketplace</div>
+  <div id="ecoPoints">Eco Points: 0</div>
+  <div class="cart-icon" onclick="goBack()">🔙</div>
+</header>
+
+<div id="cart" class="cart-grid">
+  <h3>Your Cart</h3>
+  <div id="cartItems"></div>  <!-- ✅ added this -->
+</div>
+
+<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const userId = localStorage.getItem("userId");
+  if (!userId) window.location.href = "login.html";
+
+  fetch(`${API}/eco-points/${userId}`)
+    .then(res => res.json())
+    .then(data => document.getElementById("ecoPoints").innerText = `Eco Points: ${data.ecoPoints}`);
+
+  renderCart(); // ✅ now works because we added cartItems div
+
+  function goBack() { window.location.href = "dashboard.html"; }
+});
+</script>
+</body>
+</html>
