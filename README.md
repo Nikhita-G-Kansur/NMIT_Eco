@@ -5,7 +5,7 @@ We have created a platform where customers can *buy and sell products online*.
 The system includes features such as:
 - User *Login & Sign-Up*
 - *Add-to-Cart* functionality
-- *Product Delivery* support
+- *Product buy and sell* support
 
 ## Current Status
 At present, there are *no products displayed* because sellers need to upload their items.  
