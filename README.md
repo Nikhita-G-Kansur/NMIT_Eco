@@ -8,7 +8,7 @@ The system includes features such as:
 - *Product buy and sell* support
 
 ## Current Status
-At present, there are *no products displayed* because sellers need to upload their items.  
+At present, there are *no products displayed* because sellers need to sell their items first.  
 We invite users to *add and sell their products*, so that they will appear on the website for buyers to view and purchase.
 
 ## Pages
