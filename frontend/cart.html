@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(res => res.json())
     .then(data => document.getElementById("ecoPoints").innerText = `Eco Points: ${data.ecoPoints}`);
 
-  renderCart(); // ✅ now works because we added cartItems div
+  renderCart();
 
   function goBack() { window.location.href = "dashboard.html"; }
 });
